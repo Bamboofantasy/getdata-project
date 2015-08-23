@@ -46,7 +46,7 @@ sheet1_extr %>%
   group_by(activity,subjectID) %>%
   summarise_each(funs(mean)) -> sheet_tidy
 
-write.table(sheet_tidy,"sheet_tidy.csv")
+write.table(sheet_tidy,"sheet_tidy.txt",row.name = FALSE)
 
 rm(activity_col, features, sheet1, sheet1_extr, sub_test, sub_train, subject_col, test, train, x_test, x_train, y_test, y_train, pat, activity_names)
 detach("package:plyr", unload = TRUE)
